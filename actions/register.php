@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
     if ($stmt->execute([$name, $email, $password])) {
-        header("Location: ../public/login.php?success=registered");
+        header("Location: ../views/pages/login.php?success=registered");
         exit();
     } else {
         echo "Registration failed.";
